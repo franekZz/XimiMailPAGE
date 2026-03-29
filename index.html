@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XimiMail</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Przycisk Zaloguj w prawym górnym rogu */
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .login-btn {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 8px 18px;
+            border: 2px solid #333; /* Czarna obramówka */
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Logo na środku */
+        .logo-container {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
+        }
+
+        .ximi {
+            color: #007bff; /* Niebieski */
+        }
+
+        .mail {
+            color: #8a2be2; /* Fioletowy (BlueViolet) */
+        }
+
+        /* Przycisk Utwórz konto */
+        .create-account {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff; /* Niebieski napis */
+            font-size: 24px;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: 3px solid #007bff; /* Niebieska obramówka */
+            border-radius: 50px; /* Zaokrąglony kształt */
+            transition: all 0.3s ease;
+        }
+
+        .create-account:hover {
+            background-color: #007bff;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-right">
+        <a href="#login" class="login-btn">Zaloguj się</a>
+    </div>
+
+    <div class="logo-container">
+        <span class="ximi">Ximi</span><span class="mail">Mail</span>
+    </div>
+
+    <a href="#register" class="create-account">Utwórz konto</a>
+
+</body>
+</html>
