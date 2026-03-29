@@ -22,23 +22,54 @@
             font-weight: 800;
             margin-bottom: 20px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .ximi { color: #007bff; }
         .mail { color: #8a2be2; }
 
         .form-container {
-            width: 350px;
+            width: 380px;
             padding: 30px;
-            border: 2px solid #eee;
-            border-radius: 15px;
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
         h2 {
             margin-bottom: 25px;
             color: #333;
+            font-size: 22px;
+        }
+
+        /* Grupa dla adresu @ximi.os */
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .input-group:focus-within {
+            border-color: #007bff;
+        }
+
+        .input-group input {
+            border: none;
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        .domain-suffix {
+            background: #f8f9fa;
+            padding: 12px;
+            color: #8a2be2; /* Fioletowy kolor dla końcówki .os */
+            font-weight: bold;
+            border-left: 1px solid #ddd;
         }
 
         input {
@@ -47,8 +78,9 @@
             margin-bottom: 15px;
             border: 2px solid #ddd;
             border-radius: 8px;
-            box-sizing: border-box; /* Ważne, żeby input nie wystawał */
+            box-sizing: border-box;
             outline: none;
+            font-size: 15px;
         }
 
         input:focus {
@@ -57,7 +89,7 @@
 
         .submit-btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -65,33 +97,45 @@
             font-weight: bold;
             cursor: pointer;
             font-size: 16px;
-            transition: background 0.3s;
+            margin-top: 10px;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .submit-btn:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
         .back-link {
             display: block;
-            margin-top: 15px;
+            margin-top: 20px;
             color: #888;
             text-decoration: none;
             font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="logo-small">
+    <div class="logo-small">
         <span class="ximi">Ximi</span><span class="mail">Mail</span>
-    </a>
+    </div>
 
     <div class="form-container">
-        <h2>Rejestracja</h2>
+        <h2>Stwórz swój adres</h2>
         <form action="#">
-            <input type="text" placeholder="Twój Gmail (do weryfikacji)" required>
-            <input type="password" placeholder="Hasło" required>
+            <div class="input-group">
+                <input type="text" placeholder="użytkownik" required>
+                <div class="domain-suffix">@ximi.os</div>
+            </div>
+
+            <input type="email" placeholder="Twój obecny Gmail" required>
+            <input type="password" placeholder="Hasło do XimiMail" required>
+            
             <button type="submit" class="submit-btn">Zarejestruj się</button>
         </form>
         <a href="index.html" class="back-link">Wróć do strony głównej</a>
