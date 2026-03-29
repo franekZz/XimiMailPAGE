@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utwórz konto XimiMail</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-small {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .ximi { color: #007bff; }
+        .mail { color: #8a2be2; }
+
+        .form-container {
+            width: 350px;
+            padding: 30px;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Ważne, żeby input nie wystawał */
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="logo-small">
+        <span class="ximi">Ximi</span><span class="mail">Mail</span>
+    </a>
+
+    <div class="form-container">
+        <h2>Rejestracja</h2>
+        <form action="#">
+            <input type="text" placeholder="Twój Gmail (do weryfikacji)" required>
+            <input type="password" placeholder="Hasło" required>
+            <button type="submit" class="submit-btn">Zarejestruj się</button>
+        </form>
+        <a href="index.html" class="back-link">Wróć do strony głównej</a>
+    </div>
+
+</body>
+</html>
