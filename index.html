@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XimiMail</title>
+    <title>XimiMail - Strona Główna</title>
     <style>
         body {
             margin: 0;
@@ -17,7 +17,6 @@
             align-items: center;
         }
 
-        /* Przycisk Zaloguj w prawym górnym rogu */
         .top-right {
             position: absolute;
             top: 20px;
@@ -29,7 +28,7 @@
             color: #333;
             font-weight: bold;
             padding: 8px 18px;
-            border: 2px solid #333; /* Czarna obramówka */
+            border: 2px solid #333;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
@@ -39,7 +38,6 @@
             color: #fff;
         }
 
-        /* Logo na środku */
         .logo-container {
             font-size: 72px;
             font-weight: 800;
@@ -47,24 +45,18 @@
             letter-spacing: -2px;
         }
 
-        .ximi {
-            color: #007bff; /* Niebieski */
-        }
+        .ximi { color: #007bff; }
+        .mail { color: #8a2be2; }
 
-        .mail {
-            color: #8a2be2; /* Fioletowy (BlueViolet) */
-        }
-
-        /* Przycisk Utwórz konto */
         .create-account {
             display: inline-block;
             text-decoration: none;
-            color: #007bff; /* Niebieski napis */
+            color: #007bff;
             font-size: 24px;
             font-weight: bold;
             padding: 12px 30px;
-            border: 3px solid #007bff; /* Niebieska obramówka */
-            border-radius: 50px; /* Zaokrąglony kształt */
+            border: 3px solid #007bff;
+            border-radius: 50px;
             transition: all 0.3s ease;
         }
 
@@ -78,14 +70,14 @@
 <body>
 
     <div class="top-right">
-        <a href="#login" class="login-btn">Zaloguj się</a>
+        <a href="zaloguj.html" class="login-btn">Zaloguj się</a>
     </div>
 
     <div class="logo-container">
         <span class="ximi">Ximi</span><span class="mail">Mail</span>
     </div>
 
-<a href="trworzeniekonta.html" class="create-account">Utwórz konto</a>
+    <a href="trworzeniekonta.html" class="create-account">Utwórz konto</a>
 
 </body>
 </html>
