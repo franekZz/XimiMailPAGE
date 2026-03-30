@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zaloguj się do XimiMail</title>
+    <style>
+        body {
+            margin: 0; padding: 0; font-family: Arial; background: #fff;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .logo-small { font-size: 32px; font-weight: 800; margin-bottom: 20px; text-decoration: none; }
+        .ximi { color: #007bff; } .mail { color: #8a2be2; }
+        .form-container {
+            width: 350px; padding: 30px; border: 2px solid #f0f0f0;
+            border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box; outline: none; }
+        .login-btn {
+            width: 100%; padding: 14px; background-color: #8a2be2;
+            color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+            border: 2px solid #8a2be2;
+        }
+        .login-btn:hover { background: #fff; color: #8a2be2; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="logo-small"><span class="ximi">Ximi</span><span class="mail">Mail</span></a>
+
+    <div class="form-container">
+        <h2>Logowanie</h2>
+        <form id="logForm">
+            <input type="email" id="lGmail" placeholder="Twój Gmail" required>
+            <input type="password" id="lPass" placeholder="Hasło" required>
+            <button type="submit" class="login-btn">Zaloguj się</button>
+        </form>
+        <p id="err" style="color:red;"></p>
+    </div>
+
+    <script>
+        document.getElementById('logForm').onsubmit = function(e) {
+            e.preventDefault();
+            const saved = JSON.parse(localStorage.getItem('ximiUser'));
+            const g = document.getElementById('lGmail').value;
+            const p = document.getElementById('lPass').value;
+
+            if(saved && g === saved.gmail && p === saved.pass) {
+                alert('Zalogowano jako: ' + saved.ximiAddr);
+                // Tutaj w przyszłości dodasz: window.location.href = 'poczta.html';
+            } else {
+                document.getElementById('err').innerText = 'Błędne dane!';
+            }
+        };
+    </script>
+</body>
+</html>
