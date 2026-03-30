@@ -22,7 +22,6 @@
             font-weight: 800;
             margin-bottom: 20px;
             text-decoration: none;
-            cursor: pointer;
         }
 
         .ximi { color: #007bff; }
@@ -37,13 +36,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        h2 {
-            margin-bottom: 25px;
-            color: #333;
-            font-size: 22px;
-        }
-
-        /* Grupa dla adresu @ximi.os */
         .input-group {
             display: flex;
             align-items: center;
@@ -51,23 +43,14 @@
             border: 2px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            transition: border-color 0.3s;
         }
 
-        .input-group:focus-within {
-            border-color: #007bff;
-        }
-
-        .input-group input {
-            border: none;
-            margin-bottom: 0;
-            flex: 1;
-        }
-
+        .input-group input { border: none; margin-bottom: 0; flex: 1; }
+        
         .domain-suffix {
             background: #f8f9fa;
             padding: 12px;
-            color: #8a2be2; /* Fioletowy kolor dla końcówki .os */
+            color: #8a2be2;
             font-weight: bold;
             border-left: 1px solid #ddd;
         }
@@ -80,11 +63,6 @@
             border-radius: 8px;
             box-sizing: border-box;
             outline: none;
-            font-size: 15px;
-        }
-
-        input:focus {
-            border-color: #007bff;
         }
 
         .submit-btn {
@@ -96,50 +74,41 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            transition: background 0.3s, transform 0.2s;
+            transition: 0.3s;
         }
 
-        .submit-btn:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        .back-link {
-            display: block;
-            margin-top: 20px;
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
+        .submit-btn:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
 
-    <div class="logo-small">
-        <span class="ximi">Ximi</span><span class="mail">Mail</span>
-    </div>
+    <a href="index.html" class="logo-small"><span class="ximi">Ximi</span><span class="mail">Mail</span></a>
 
     <div class="form-container">
         <h2>Stwórz swój adres</h2>
-        <form action="#">
+        <form id="regForm">
             <div class="input-group">
-                <input type="text" placeholder="użytkownik" required>
+                <input type="text" id="user" placeholder="użytkownik" required>
                 <div class="domain-suffix">@ximi.os</div>
             </div>
-
-            <input type="email" placeholder="Twój obecny Gmail" required>
-            <input type="password" placeholder="Hasło do XimiMail" required>
-            
+            <input type="email" id="gmail" placeholder="Twój obecny Gmail" required>
+            <input type="password" id="pass" placeholder="Hasło" required>
             <button type="submit" class="submit-btn">Zarejestruj się</button>
         </form>
-        <a href="index.html" class="back-link">Wróć do strony głównej</a>
     </div>
 
+    <script>
+        document.getElementById('regForm').onsubmit = function(e) {
+            e.preventDefault();
+            const data = {
+                gmail: document.getElementById('gmail').value,
+                pass: document.getElementById('pass').value,
+                ximiAddr: document.getElementById('user').value + "@ximi.os"
+            };
+            localStorage.setItem('ximiUser', JSON.stringify(data));
+            alert('Konto utworzone!');
+            window.location.href = 'zaloguj.html';
+        };
+    </script>
 </body>
 </html>
